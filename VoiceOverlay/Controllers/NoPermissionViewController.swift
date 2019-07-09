@@ -44,14 +44,7 @@ public class NoPermissionViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.closeButtonTapped(_:)))
         closeView.addGestureRecognizer(tap)
     }
-  
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        titleLabel.preferredMaxLayoutWidth = self.view.frame.width - VoiceUIInternalConstants.sideMarginConstant * 2
-        subtitleLabel.preferredMaxLayoutWidth = self.view.frame.width - VoiceUIInternalConstants.sideMarginConstant * 2
-        self.view.layoutIfNeeded()
-    }
-    
+      
     @objc func goToSettingsTapped() {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
             return
